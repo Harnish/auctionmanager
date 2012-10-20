@@ -1,0 +1,29 @@
+<h1>Listing auction_tables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Closetime</th>
+    <th>Auction</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Close Table</th>
+  </tr>
+
+<% @auction_tables.each do |auction_table| %>
+  <tr>
+    <td><%= auction_table.name %></td>
+    <td><%= auction_table.closeTime %></td>
+    <td><%= auction_table.auction_id %></td>
+    <td><%= link_to 'Show', auction_table %></td>
+    <td><%= link_to 'Edit', edit_auction_table_path(auction_table) %></td>
+    <td><%= link_to 'Destroy', auction_table, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><a href="/auction_tables/<%= auction_table.id %>/closetable">Close Table</a></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auction table', new_auction_table_path %>

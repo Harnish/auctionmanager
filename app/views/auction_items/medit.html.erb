@@ -1,0 +1,6 @@
+#Close tables
+
+<% auction_item = AuctionItems.All 
+form_for "auction_item[]", auction_item do |f| %>
+<% = f.text_field :name %>
+<% end %>

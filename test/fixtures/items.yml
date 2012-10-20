@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  donor_id: 1
+  value: 
+  description: MyString
+  certificate: false
+  delivered: false
+
+two:
+  name: MyString
+  donor_id: 1
+  value: 
+  description: MyString
+  certificate: false
+  delivered: false

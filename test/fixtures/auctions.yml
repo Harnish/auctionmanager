@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  schedule: 2011-03-14
+  organization_id: 1
+
+two:
+  name: MyString
+  schedule: 2011-03-14
+  organization_id: 1

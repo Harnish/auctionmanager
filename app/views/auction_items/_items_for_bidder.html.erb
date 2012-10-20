@@ -1,0 +1,32 @@
+<h1>Purchases</h1>
+
+<table width="100%">
+  <tr>
+    <th>Number</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Table</th>
+    <th>Cert?</th>
+    <th>Sellprice</th>
+    <th>Sales Tax</th>
+  </tr>
+
+<% @auction_items.each do |auction_item| %>
+  <tr>
+    <td><%= auction_item.itemnum %></td>
+    <td><%= auction_item.name %></td>
+    <td><%= auction_item.description %></td>
+    <td><%= auction_item.auction_table.name %></td>
+    <td><%= auction_item.certificate %></td>
+    <td>$<%= number_with_precision(auction_item.sellprice, :precision => 2) %></td>
+    <td><% if auction_item.taxable %>
+       $<%= number_with_precision(auction_item.sellprice * 0.06, :precision => 2) %>
+    <% end %>
+    </td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+

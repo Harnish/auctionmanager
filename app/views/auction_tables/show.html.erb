@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @auction_table.name %>
+</p>
+
+<p>
+  <b>Closetime:</b>
+  <%= @auction_table.closeTime %>
+</p>
+
+<p>
+  <b>Auction:</b>
+  <%= @auction_table.auction_id %>
+</p>
+<table>
+<tr><th>Item Number</th><th>Item Name</th></tr>
+<% for auction_item in @auction_table.auction_items %>
+  <tr><td><%= h auction_item.itemnum %></td><td><%= h auction_item.name %></td></tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_auction_table_path(@auction_table) %> |
+<%= link_to 'Back', auction_tables_path %>

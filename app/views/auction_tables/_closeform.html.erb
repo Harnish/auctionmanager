@@ -1,0 +1,31 @@
+<%= form_for(@auction_table) do |f| %>
+  <% if @auction_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auction_table.errors.count, "error") %> prohibited this auction_table from being saved:</h2>
+
+      <ul>
+      <% @auction_table.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= @auction_table.name %>
+  <div class="field">
+    <%= f.hidden_field :auction_id %>
+    <%= hidden_field_tag 'auction_id', @auction_id  %>
+  </div>
+  <div>
+  <% f.fields_for :auction_items do |builder| %>
+   <div>
+     <%= builder.object.itemnum %>
+     <%= builder.collection_select( :buyer_id, Buyer.all, :id, number_with_precision(:bidderNumber, :strip_insignificant_zeros => true), { :include_blank => true }) %>
+     <%= builder.text_field :sellprice %>
+   </div>
+
+  <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

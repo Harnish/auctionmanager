@@ -1,0 +1,41 @@
+<h1> User Cashout </h1>
+<table width="100%">
+<tr>
+    <td><b>Name</b></td><td><%= @buyer.name %></td>
+    <td><b>Bidder Number</b></td><td><%= number_with_precision(@buyer.bidderNumber, :strip_insignificant_zeros => true) %></td>
+</tr><tr>
+    <td><b>Address</b></td><td colspan="3"><%= @buyer.address %></td>
+</tr><tr><td></td>
+    <td colspan="3"><%= @buyer.city %>,
+    <%= @buyer.state %>
+    <%= @buyer.zip %></td>
+</tr><tr>
+    <td><b>Phone</b></td><td><%= @buyer.phone %></td>
+    <td><b>Email</b></td><td><%= @buyer.email %></td>
+</tr>
+</table>
+<br />
+<%= render :partial => "/auction_items/items_for_bidder", :locals => {:bidder_num => @buyer.bidderNumber } %>
+<table>
+<tr><td><b>
+Sub Total :</b></td><td> $<%= number_with_precision(@total, :precision => 2) %></td></tr>
+
+<tr><td><b>Taxes :</b></td><td> $<%= number_with_precision(@taxes, :precision => 2) %></td></tr>
+<tr><td><b>Grand Total :</b></td><td> $<%= number_with_precision(@final_total, :precision => 2) %></td></tr>
+</table>  
+<input type="radio" name="cash" group="paymentmethod">Cash<br>
+<input type="radio" name="check" group="paymentmethod">Check #<input type=text name=cardid><br>
+<input type="radio" name="credit" group="paymentmethod">Credit<br>
+<table>
+<tr>
+  <td>Card Type: </td><td><select>
+				<option>MasterCard</option>
+				<option>Visa</option>
+			  </select</td></tr>
+<tr><td>Card Number</td><td><input type=text size=20></td></tr>
+<tr><td>Name on Card</td><td><input type=text size=50></td></tr>
+<tr><td>Expdate:</td><td><input type=text></td></tr>
+<tr><td>Security Code: </td><td><input type=text></td></tr>
+<tr><td height=20>Signature: </td><td><br><br>__________________________________________________________</td></tr>
+</table>
+By signing the above line I authorize St. Therese Auction to charge the above purchases card listed above.

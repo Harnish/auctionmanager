@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @donor.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @donor.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @donor.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @donor.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @donor.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @donor.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @donor.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_donor_path(@donor) %> |
+<%= link_to 'Back', donors_path %>

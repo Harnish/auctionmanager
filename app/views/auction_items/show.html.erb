@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item Number:</b>
+  <%= @auction_item.itemnum %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @auction_item.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @auction_item.description %>
+</p>
+
+<p>
+  <b>Buyer:</b>
+  <%= @auction_item.buyer_id %>
+</p>
+
+<p>
+  <b>Sellprice:</b>
+  <%= @auction_item.sellprice %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @auction_item.item_id %>
+</p>
+
+<p>
+  <b>Table:</b>
+  <%= @auction_item.table_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_auction_item_path(@auction_item) %> |
+<%= link_to 'Back', auction_items_path %>

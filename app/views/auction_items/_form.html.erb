@@ -1,0 +1,53 @@
+<%= form_for(@auction_item) do |f| %>
+  <% if @auction_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auction_item.errors.count, "error") %> prohibited this auction_item from being saved:</h2>
+
+      <ul>
+      <% @auction_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :itemnum %><br />
+    <%= f.text_field :itemnum %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :buyer_id %><br />
+    <%= f.collection_select( :buyer_id, Buyer.all, :id, number_with_precision(:bidderNumber, :strip_insignificant_zeros => true), { :include_blank => true }) %>
+  </div>
+  <div class="field">
+    <%= f.label :sellprice %><br />
+    <%= f.text_field :sellprice %>
+  </div>
+  <div class="field">
+    <%= f.label :item_id %><br />
+    <%= f.text_field :item_id %>
+  </div>
+  <div class="field">
+    <%= f.label :table_id %><br />
+    <%= f.collection_select( :table_id, AuctionTable.all, :id, :name, { :include_blank => true })  %>    
+  </div>
+  <div class="field">
+    <%= f.label :certificate %><br />
+    <%= f.check_box :certificate %>
+  </div>
+  <div class="field">
+    <%= f.label :taxable %><br />
+    <%= f.check_box :taxable %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

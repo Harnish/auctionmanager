@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>Donor:</b>
+  <%= @item.donor_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @item.value %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Certificate:</b>
+  <%= @item.certificate %>
+</p>
+
+<p>
+  <b>Delivered:</b>
+  <%= @item.delivered %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

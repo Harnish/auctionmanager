@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  closeTime: 2011-03-14 22:09:34
+  auction_id: 1
+
+two:
+  name: MyString
+  closeTime: 2011-03-14 22:09:34
+  auction_id: 1

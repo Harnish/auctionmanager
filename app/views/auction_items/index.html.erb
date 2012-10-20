@@ -1,0 +1,34 @@
+<h1>Listing auction_items</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Table</th>
+    <th>Taxable</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @auction_items.each do |auction_item| %>
+  <tr>
+    <td><%= auction_item.itemnum %></td>
+    <td><%= auction_item.name %></td>
+    <td><%= auction_item.description %></td>
+    <td>
+	<% if !auction_item.table_id.nil? %>
+	   <%= auction_item.auction_table.name %>
+	<% end %></td>
+    <td><%= auction_item.taxable %></td>
+    <td><%= link_to 'Show', auction_item %></td>
+    <td><%= link_to 'Edit', edit_auction_item_path(auction_item) %></td>
+    <td><%= link_to 'Destroy', auction_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auction item', new_auction_item_path %>

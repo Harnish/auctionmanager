@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  buyer_id: 1
+  sellprice: 1.5
+  item_id: 1
+  table_id: 1
+
+two:
+  name: MyString
+  description: MyString
+  buyer_id: 1
+  sellprice: 1.5
+  item_id: 1
+  table_id: 1
