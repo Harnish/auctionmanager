@@ -1,31 +1,4 @@
 Auctionmanager::Application.routes.draw do
-  resources :auction_items
-
-    match 'auction_items/items_for_bidder/', :controller=>'auction_items', :action=>'items_for_bidder'
-  
-  resources :items
-
-  resources :buyers
-
-    match 'buyers/:id/cashout', :controller=>'buyers', :action=>'cashout'
-    match 'buyers/:id/here', :controller=>'buyers', :action=>'here'
-
-  resources :donors
-
-  resources :auction_tables
-
-    match 'auction_tables/:id/closetable', :controller=>'auction_tables', :action=>'closetable'
-
-  resources :auctions
-
-    match 'auction/update_auction_session/:id', :controller=>'auctions', :action=>'update_auction_session'
-
-  resources :organization_members
-
-  resources :organizations
-
-  devise_for :users
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -75,12 +48,11 @@ Auctionmanager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "auctions#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
-  #root :to => "addresses#index"
+  # match ':controller(/:action(/:id))(.:format)'
 end

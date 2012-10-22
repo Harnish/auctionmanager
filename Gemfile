@@ -1,15 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>=3.0.7'
-
+gem 'rails', '>=3.2.8'
+gem 'prototype-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 
 gem 'sqlite3'
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'nifty-generators', '>= 0.4.5' 
 gem 'devise', '1.3.4'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
