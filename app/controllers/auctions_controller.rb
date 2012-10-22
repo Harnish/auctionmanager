@@ -15,7 +15,7 @@ class AuctionsController < ApplicationController
   # GET /auctions/1.xml
   def show
     @auction = Auction.find(params[:id])
-    @total = @auction.auction_items.sum('sellprice')    
+  #  @total = @auction.auction_items.sum('sellprice')    
 
     respond_to do |format|
       format.html # show.html.erb
